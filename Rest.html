@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Ordering System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Restaurant</h1>
+        <label for="mealType">Select a meal type:</label>
+        <select id="mealType">
+            <option value="0">--Select--</option>
+            <option value="1">Breakfast</option>
+            <option value="2">Lunch</option>
+            <option value="3">Dinner</option>
+        </select>
+
+        <div id="dishSelection" style="display:none;">
+            <label for="dish">Select a dish:</label>
+            <select id="dish">
+                <option value="0">--Select--</option>
+            </select>
+        </div>
+
+        <button onclick="calculateTotal()">Calculate Total</button>
+
+        <p id="totalPrice"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
