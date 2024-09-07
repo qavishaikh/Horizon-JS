@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Alert</title>
+</head>
+<body>
+    <h2>Enter something:</h2>
+    <input type="text" id="userInput" placeholder="Type something here...">
+    <button onclick="showAlert()">Submit</button>
+
+    <script>
+        function showAlert() {
+            // Get the user input from the input field
+            var input = document.getElementById("userInput").value;
+
+            // Show an alert with the user's input
+            alert("You entered: " + input);
+            // document.write(input)
+        }
+    </script>
+</body>
+</html>

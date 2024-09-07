@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+
+    <script>
+        let continueCalculating = true;
+
+        while (continueCalculating) {
+            // Input from user
+            let num1 = parseFloat(prompt("Enter the first number:"));
+            let num2 = parseFloat(prompt("Enter the second number:"));
+            let operation = prompt("Choose operation (+, -, *, /) or 'q' to quit:");
+
+            // Switch statement to perform the chosen operation
+            switch (operation) {
+                case '+':
+                    alert(`${num1} + ${num2} = ${num1 + num2}`);
+                    break;
+                case '-':
+                    alert(`${num1} - ${num2} = ${num1 - num2}`);
+                    break;
+                case '*':
+                    alert(`${num1} * ${num2} = ${num1 * num2}`);
+                    break;
+                case '/':
+                    if (num2 !== 0) {
+                        alert(`${num1} / ${num2} = ${num1 / num2}`);
+                    } else {
+                        alert("Error: Division by zero!");
+                    }
+                    break;
+                case 'q':  // User chooses to quit
+                    continueCalculating = false;
+                    alert("Exiting program...");
+                    break;
+                default:
+                    alert("Invalid operation!");
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
