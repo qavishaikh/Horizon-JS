@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with JavaScript</title>
+</head>
+<body>
+    <div id="table-container"></div>
+    <script>
+        // Data for the table
+const tableData = [
+    { name: 'John', age: 28, job: 'Developer' },
+    { name: 'Jane', age: 32, job: 'Designer' },
+    { name: 'Smith', age: 40, job: 'Manager' },
+];
+
+// Create table and append to the DOM
+function createTable(data) {
+    const table = document.createElement('table');
+    table.border = "1";
+
+    // Create table header
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    const headers = ['Name', 'Age', 'Job'];
+
+    headers.forEach(headerText => {
+        const header = document.createElement('th');
+        header.textContent = headerText;
+        headerRow.appendChild(header);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    const tbody = document.createElement('tbody');
+    
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        
+        Object.values(item).forEach(text => {
+            const cell = document.createElement('td');
+            cell.textContent = text;
+            row.appendChild(cell);
+        });
+
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    
+    // Append the table to the container in the DOM
+    document.getElementById('table-container').appendChild(table);
+}
+
+// Call the function to create the table
+createTable(tableData);
+
+    </script>
+
+</body>
+</html>
